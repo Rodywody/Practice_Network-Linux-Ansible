@@ -13,6 +13,7 @@ if password:
     tn.read_until(b"Password: ")
     tn.write(password.encode('ascii') + b"\n")
 
+tn.write(b"en\n")
 tn.write(b"conf t\n")
 tn.write(b"int l0\n")
 tn.write(b"ip add 1.1.1.1 255.255.255.0\n")
