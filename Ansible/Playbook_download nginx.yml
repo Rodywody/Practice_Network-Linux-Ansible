@@ -6,9 +6,18 @@
   tasks:
     - name: install epel-release
       yum: name=epel-release state=latest
+   
     - name: install nginx web server
       yum: name=nginx state=present
+    
     - name: upload default index.html for web server
       get_url: url=https://www.nginx.com dest=/usr/share/nginx/html/ mode=0644
+   
     - name: start nginx web server
       service: name=nginx state=started
+    
+    - name: firewall-cmd start
+      shell: firewall-cmd --add-port=80/tcp --permanent 
+    
+    - name: firewall-cmd reload
+      shell: firewall-cmd --reload
