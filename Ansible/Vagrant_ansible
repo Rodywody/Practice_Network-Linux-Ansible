@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 
-Vagrant.configure("2") do |config|
-  config.vm.define "ansible-server" do |cfg|
+Vagrant.configure("2") do |config|  #vagrant_api_version
+  config.vm.define "ansible-server" do |cfg| 
     cfg.vm.box = "almalinux/8"
     cfg.vm.provider "virtualbox" do |vb|
       vb.name = "ansible-server(github_SysNet4Admin)"
