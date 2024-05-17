@@ -14,5 +14,7 @@ Vagrant.configure("2") do |config|  #vagrant_api_version
     cfg.vm.synced_folder " ../data", "/vagrant", disabled: true
     cfg.vm.provision "shell", inline: "dnf -y install epel-release"
     cfg.vm.provision "shell", inline: "dnf -y install ansible"
+    cfg.vm.provision "file", source: "ansible_env_ready.yml", destination: "anisible_env_ready_yml"
+    cfg.vm.provision "shell", inline: "ansible-playbook ansible_env_ready.yml"
   end
 end
