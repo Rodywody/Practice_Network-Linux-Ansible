@@ -1,5 +1,6 @@
 ---
-- name : Firewalld rules
+- name: Firewalld rules
+  hosts: nginx
   gather_facts: no 
 
   tasks
