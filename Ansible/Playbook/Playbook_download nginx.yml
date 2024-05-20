@@ -1,7 +1,7 @@
 ---
 - name: Install nginx on linux
   hosts: nginx #/etc/ansible/hosts check
-  gather_facks: no
+  gather_facts: no
 
   tasks:
     - name: install epel-release
