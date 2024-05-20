@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
 	   vb.name = "Ansible-Node01"
 	 end
 	 cfg.vm.host_name = "ansible-node01"
-	 cfg.vm.network "public_network", ip: "192.168.1.11"
+	 cfg.vm.network "private_network", ip: "192.168.1.11"
 	 cfg.vm.network "forwarded_port", guest: 22, host: 60011, auto_correct: true, id: "ssh"
 	 cfg.vm.synced_folder "../data", "/vagrant", disabled: true 
   end
@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
 	   vb.name = "Ansible-Node02"
 	 end
 	 cfg.vm.host_name = "ansible-node02"
-	 cfg.vm.network "public_network", ip: "192.168.1.12"
+	 cfg.vm.network "private_network", ip: "192.168.1.12"
 	 cfg.vm.network "forwarded_port", guest: 22, host: 60012, auto_correct: true, id: "ssh"
 	 cfg.vm.synced_folder "../data", "/vagrant", disabled: true
   end
@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
 #	   vb.name = "Ansible-Node03"
 #	 end
 #	 cfg.vm.host_name = "ansible-node03"
-#	 cfg.vm.network "public_network", ip: "192.168.1.13"
+#	 cfg.vm.network "private_network", ip: "192.168.1.13"
 #	 cfg.vm.network "forwarded_port", guest: 22, host: 60013, auto_correct: true, id: "ssh"
 #	 cfg.vm.synced_folder "../data", "/vagrant", disabled: true 
 #  end
@@ -53,7 +53,7 @@ Vagrant.configure("2") do |config|
 	  vb.name = "Ansible-Server"
 	end
 	cfg.vm.host_name = "ansible-server"
-	cfg.vm.network "public_network", ip: "192.168.1.10"
+	cfg.vm.network "private_network", ip: "192.168.1.10"
 	cfg.vm.network "forwarded_port", guest: 22, host: 60010, auto_correct: true, id: "ssh"
 	cfg.vm.synced_folder "../data", "/vagrant", disabled: true
 	cfg.vm.provision "shell", inline: "yum install epel-release -yq"
