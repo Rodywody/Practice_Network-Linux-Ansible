@@ -16,8 +16,5 @@
     - name: start nginx web server
       service: name=nginx state=started
     
-    - name: firewall-cmd start
+    - name: firewall-cmd start && firewall-cmd --reload
       shell: firewall-cmd --add-port=80/tcp --permanent 
-    
-    - name: firewall-cmd reload
-      shell: firewall-cmd --reload
