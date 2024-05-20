@@ -1,0 +1,15 @@
+---
+- name : Firewalld rules
+  gather_facts: no 
+
+  tasks
+    - name: FirewallD rules
+      firewalld:
+        permanent: yes
+        immediate: yes
+        service: "{{ item }}"
+        state: enabled
+      with_items:
+        - http
+        - https
+        - ftp
