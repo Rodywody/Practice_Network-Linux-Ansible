@@ -1,0 +1,13 @@
+---
+- name: addition hosts
+  hosts: localhost 
+  gather_facts: no
+  tasks:
+    - name: Add "/etc/ansible/hosts"
+      blockinfile: 
+        path: /etc/ansible/hosts    
+        block: |
+          [AlmaOS]
+          192.168.1.11
+          192.168.1.12
+          192.168.1.13
