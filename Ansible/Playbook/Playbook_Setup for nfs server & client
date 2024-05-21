@@ -21,12 +21,6 @@
         path: /etc/exports
         line: /nfs 192.168.111.0/24(rw,sync,all_squash) 
 
-    - name: nfs service restart
-      become: yes
-      service: 
-        name: nfs-utils
-        state: restarted
-
     - name: nfs server restart
       become: yes
       service: 
