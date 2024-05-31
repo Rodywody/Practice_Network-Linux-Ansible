@@ -9,7 +9,10 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password
-
+    restart: always
+    ports:
+      - "3306:80"
+    
   wordpress:
     depends_on:
       - db
@@ -23,7 +26,8 @@ services:
     volumes:
       - wordpress:/var/www/html
     ports: 
-      - "8080:80"
+      - "80:80"
+    restart: always
 
   phpmyadmin:
     depends_on:
@@ -35,7 +39,8 @@ services:
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
     ports:
       - 3333:80
-
+    restart: always
+    
 volumes:
   wordpress:
   dbdata:
