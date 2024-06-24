@@ -15,8 +15,9 @@
           <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
           <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
           <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
-          <img src="https://img.shields.io/badge/VMware-607078?logo=vmware&logoColor=white&style=for-the-badge">
           <img src="https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white">
+          <img src="https://img.shields.io/badge/VMware-607078?logo=vmware&logoColor=white&style=for-the-badge">
+          
             </div>
     </div>
     <div style="text-align: left;">
