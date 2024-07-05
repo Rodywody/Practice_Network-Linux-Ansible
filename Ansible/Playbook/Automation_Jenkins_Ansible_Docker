@@ -1,0 +1,27 @@
+---
+- name: Automation
+  hosts: ansible
+  gather_facts: no
+
+  tasks:
+   - name: docker image build
+     shell: docker build -t test:latest .
+     args:
+       chdir: /opt/docker
+
+   - name: docker tag
+     command: docker tag test:latest rodywody/test:latest
+
+   - name: docker push
+     command: docker push rodywody/test:latest
+
+- name: Contribution docker image & run
+  hosts: docker
+  gather_facts: no
+
+  tasks:
+   - name: Docker image download
+     shell: sudo docker pull rodywody/4glapp:latest
+
+   - name: Docker running
+     command: sudo docker run -d -p 8090:8080 --restart always --name 0705_1 rodywody/4glapp:latest
