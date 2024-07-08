@@ -17,7 +17,7 @@ spec:
     spec: 
       containers: 
       - name: myproject
-        image: Rodywody/4glapp
+        image: rodywody/4glapp
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
