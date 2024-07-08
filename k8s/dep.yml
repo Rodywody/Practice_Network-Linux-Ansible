@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: fourapp
+  labels:
+    app: fourapp
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fourapp
+  template:
+    metadata:
+      labels:
+        app: fourapp
+    spec: 
+      containers: 
+      - name: myproject
+        image: Rodywody/4glapp
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+      
